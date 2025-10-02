@@ -1,0 +1,1739 @@
+No files changed, compilation skipped
+
+Ran 1 test for test/ReentrancyTest.sol:ReentrancyTest
+[PASS] testReentrancyAttack() (gas: 3528525)
+Logs:
+  - SETUP COMPLETED -
+
+  Vulnerable contract balance: 10 ETH
+  Attacker contract entitlements: 0.2 ETH (0.1 ETH each)
+  Innocent user entitlement: 1.3 ETH
+  
+  - EXECUTING ATTACK -
+
+  Round 1: Attacker 1 calls attack()
+    -> Drained: 0.1 ETH
+  Round 2: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 3: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 4: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 5: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 6: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 7: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 8: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 9: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 10: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 11: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 12: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 13: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 14: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 15: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 16: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 17: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 18: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 19: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 20: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 21: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 22: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 23: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 24: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 25: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 26: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 27: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 28: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 29: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 30: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 31: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 32: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 33: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 34: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 35: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 36: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 37: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 38: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 39: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 40: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 41: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 42: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 43: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 44: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 45: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 46: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 47: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 48: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 49: Attacker 1 calls attack()
+    -> Drained: 0.2 ETH
+  Round 50: Attacker 2 calls attack()
+    -> Drained: 0.2 ETH
+  Round 51: Attacker 1 calls attack()
+    -> Drained: 0.1 ETH
+  
+  Attack completed after 51 rounds
+  Total withdrawn from attacker contracts: 10 ETH
+  
+  - ATTACK SUMMARY -
+
+  Initial contract balance: 10 ETH
+  Final contract balance: 0 ETH
+  Total drained: 10 ETH
+  Legitimately entitled: 0.2 ETH
+  Excess stolen: 9.8 ETH
+  Drain efficiency: 100%
+  
+  - USER IMPACT ASSESSMENT -
+
+  Innocent user entitled to: 1.3 ETH
+  Contract remaining balance: 0 ETH
+  Innocent user cannot withdraw... Insufficient contract funds
+  
+Contract drained to 0 ETH threshold!
+
+Traces:
+  [3023040] ReentrancyTest::setUp()
+    ├─ [951472] → new UnsafeResolutionHub@0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f
+    │   └─ ← [Return] 4065 bytes of code
+    ├─ [342304] → new FancyReentrancy@0x2e234DAe75C793f67A35089C9d99245E1C58470b
+    │   └─ ← [Return] 1338 bytes of code
+    ├─ [342304] → new FancyReentrancy@0xF62849F9A0B5Bf2913b396098F7c7019b51A820a
+    │   └─ ← [Return] 1338 bytes of code
+    ├─ [0] VM::addr(<pk>) [staticcall]
+    │   └─ ← [Return] innocent1: [0xb78b2D46e217a20A8448CA6E9B7A682D548E1EFF]
+    ├─ [0] VM::label(innocent1: [0xb78b2D46e217a20A8448CA6E9B7A682D548E1EFF], "innocent1")
+    │   └─ ← [Return] 
+    ├─ [0] VM::addr(<pk>) [staticcall]
+    │   └─ ← [Return] innocent2: [0x6737778892906B424AA907bC3f0DEd986103A37C]
+    ├─ [0] VM::label(innocent2: [0x6737778892906B424AA907bC3f0DEd986103A37C], "innocent2")
+    │   └─ ← [Return] 
+    ├─ [43930] FancyReentrancy::setPeer(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Stop] 
+    ├─ [43930] FancyReentrancy::setPeer(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(ReentrancyTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 10000000000000000000 [1e19])
+    │   └─ ← [Return] 
+    ├─ [22727] UnsafeResolutionHub::deposit{value: 10000000000000000000}()
+    │   ├─ emit Deposit(user: ReentrancyTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], amount: 10000000000000000000 [1e19])
+    │   └─ ← [Stop] 
+    ├─ [44295] UnsafeResolutionHub::setMediator(ReentrancyTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], true)
+    │   └─ ← [Stop] 
+    ├─ [182874] UnsafeResolutionHub::createDispute(1, FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], ReentrancyTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 100000000000000000 [1e17])
+    │   ├─ emit DisputeCreated(disputeId: 1, purchaseId: 1, buyer: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], seller: ReentrancyTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], amount: 100000000000000000 [1e17])
+    │   └─ ← [Stop] 
+    ├─ [165774] UnsafeResolutionHub::createDispute(2, FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], ReentrancyTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 100000000000000000 [1e17])
+    │   ├─ emit DisputeCreated(disputeId: 2, purchaseId: 2, buyer: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], seller: ReentrancyTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], amount: 100000000000000000 [1e17])
+    │   └─ ← [Stop] 
+    ├─ [165774] UnsafeResolutionHub::createDispute(3, innocent1: [0xb78b2D46e217a20A8448CA6E9B7A682D548E1EFF], ReentrancyTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 1300000000000000000 [1.3e18])
+    │   ├─ emit DisputeCreated(disputeId: 3, purchaseId: 3, buyer: innocent1: [0xb78b2D46e217a20A8448CA6E9B7A682D548E1EFF], seller: ReentrancyTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], amount: 1300000000000000000 [1.3e18])
+    │   └─ ← [Stop] 
+    ├─ [165762] UnsafeResolutionHub::createDispute(4, innocent2: [0x6737778892906B424AA907bC3f0DEd986103A37C], ReentrancyTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 60000000000000000 [6e16])
+    │   ├─ emit DisputeCreated(disputeId: 4, purchaseId: 4, buyer: innocent2: [0x6737778892906B424AA907bC3f0DEd986103A37C], seller: ReentrancyTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], amount: 60000000000000000 [6e16])
+    │   └─ ← [Stop] 
+    ├─ [81342] UnsafeResolutionHub::resolveDispute(1, true)
+    │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 100000000000000000 [1e17])
+    │   ├─ emit DisputeResolved(disputeId: 1, buyer: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], seller: ReentrancyTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], resolution: true, amount: 100000000000000000 [1e17])
+    │   └─ ← [Stop] 
+    ├─ [81342] UnsafeResolutionHub::resolveDispute(2, true)
+    │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 100000000000000000 [1e17])
+    │   ├─ emit DisputeResolved(disputeId: 2, buyer: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], seller: ReentrancyTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], resolution: true, amount: 100000000000000000 [1e17])
+    │   └─ ← [Stop] 
+    ├─ [81342] UnsafeResolutionHub::resolveDispute(3, true)
+    │   ├─ emit BalanceUpdated(user: innocent1: [0xb78b2D46e217a20A8448CA6E9B7A682D548E1EFF], newBalance: 1300000000000000000 [1.3e18])
+    │   ├─ emit DisputeResolved(disputeId: 3, buyer: innocent1: [0xb78b2D46e217a20A8448CA6E9B7A682D548E1EFF], seller: ReentrancyTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], resolution: true, amount: 1300000000000000000 [1.3e18])
+    │   └─ ← [Stop] 
+    ├─ [81342] UnsafeResolutionHub::resolveDispute(4, true)
+    │   ├─ emit BalanceUpdated(user: innocent2: [0x6737778892906B424AA907bC3f0DEd986103A37C], newBalance: 60000000000000000 [6e16])
+    │   ├─ emit DisputeResolved(disputeId: 4, buyer: innocent2: [0x6737778892906B424AA907bC3f0DEd986103A37C], seller: ReentrancyTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], resolution: true, amount: 60000000000000000 [6e16])
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("- SETUP COMPLETED -\n") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(10) [staticcall]
+    │   └─ ← [Return] "10"
+    ├─ [0] console::log("Vulnerable contract balance: %s", "10 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(1) [staticcall]
+    │   └─ ← [Return] "1"
+    ├─ [0] console::log("Attacker contract entitlements: %s (%s each)", "0.2 ETH", "0.1 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(1) [staticcall]
+    │   └─ ← [Return] "1"
+    ├─ [0] VM::toString(3) [staticcall]
+    │   └─ ← [Return] "3"
+    ├─ [0] console::log("Innocent user entitlement: %s", "1.3 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    └─ ← [Stop] 
+
+  [3916125] ReentrancyTest::testReentrancyAttack()
+    ├─ [0] console::log("\n  - EXECUTING ATTACK -\n") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [2383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 100000000000000000 [1e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 1, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [49900] FancyReentrancy::attack()
+    │   ├─ [31200] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [13588] FancyReentrancy::receive{value: 100000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 100000000000000000 [1e17]
+    │   │   │   ├─ [12080] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 100000000000000000 [1e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 100000000000000000 [1e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(1) [staticcall]
+    │   └─ ← [Return] "1"
+    ├─ [0] console::log("  -> Drained: %s", "0.1 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 2, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 3, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 4, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 5, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 6, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 7, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 8, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 9, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 10, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 11, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 12, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 13, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 14, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 15, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 16, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 17, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 18, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 19, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 20, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 21, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 22, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 23, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 24, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 25, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 26, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 27, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 28, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 29, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 30, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 31, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 32, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 33, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 34, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 35, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 36, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 37, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 38, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 39, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 40, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 41, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 42, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 43, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 44, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 45, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 46, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 47, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 48, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 49, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67000] FancyReentrancy::attack()
+    │   ├─ [48300] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30688] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 200000000000000000 [2e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 200000000000000000 [2e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 50, 2) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [67010] FancyReentrancy::attack()
+    │   ├─ [48310] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [30698] FancyReentrancy::receive{value: 200000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 200000000000000000 [2e17]
+    │   │   │   ├─ [29180] UnsafeResolutionHub::donate(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 100000000000000000 [1e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 100000000000000000 [1e17])
+    │   │   │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 100000000000000000 [1e17])
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], amount: 200000000000000000 [2e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("  -> Drained: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b])
+    │   └─ ← [Return] 
+    ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 100000000000000000 [1e17]
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Round %d: Attacker %d calls attack()", 51, 1) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [40079] FancyReentrancy::attack()
+    │   ├─ [21379] UnsafeResolutionHub::getRefund()
+    │   │   ├─ [967] FancyReentrancy::receive{value: 100000000000000000}()
+    │   │   │   ├─ [383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   │   │   │   └─ ← [Return] 100000000000000000 [1e17]
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit BalanceUpdated(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], newBalance: 0)
+    │   │   ├─ emit Withdrawal(user: FancyReentrancy: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 100000000000000000 [1e17])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(1) [staticcall]
+    │   └─ ← [Return] "1"
+    ├─ [0] console::log("  -> Drained: %s", "0.1 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("\n  Attack completed after %d rounds", 51) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [28250] FancyReentrancy::withdraw()
+    │   ├─ [55] ReentrancyTest::receive{value: 5000000000000000000}()
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [28250] FancyReentrancy::withdraw()
+    │   ├─ [55] ReentrancyTest::receive{value: 5000000000000000000}()
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(10) [staticcall]
+    │   └─ ← [Return] "10"
+    ├─ [0] console::log("Total withdrawn from attacker contracts: %s", "10 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("\n  - ATTACK SUMMARY -\n") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(10) [staticcall]
+    │   └─ ← [Return] "10"
+    ├─ [0] console::log("Initial contract balance: %s", "10 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Final contract balance: %s", "0 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(10) [staticcall]
+    │   └─ ← [Return] "10"
+    ├─ [0] console::log("Total drained: %s", "10 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] VM::toString(2) [staticcall]
+    │   └─ ← [Return] "2"
+    ├─ [0] console::log("Legitimately entitled: %s", "0.2 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(9) [staticcall]
+    │   └─ ← [Return] "9"
+    ├─ [0] VM::toString(8) [staticcall]
+    │   └─ ← [Return] "8"
+    ├─ [0] console::log("Excess stolen: %s", "9.8 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Drain efficiency: %d%%", 100) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(innocent1: [0xb78b2D46e217a20A8448CA6E9B7A682D548E1EFF])
+    │   └─ ← [Return] 
+    ├─ [2383] UnsafeResolutionHub::userBalance() [staticcall]
+    │   └─ ← [Return] 1300000000000000000 [1.3e18]
+    ├─ [0] console::log("\n  - USER IMPACT ASSESSMENT -\n") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::toString(1) [staticcall]
+    │   └─ ← [Return] "1"
+    ├─ [0] VM::toString(3) [staticcall]
+    │   └─ ← [Return] "3"
+    ├─ [0] console::log("Innocent user entitled to: %s", "1.3 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Contract remaining balance: %s", "0 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Innocent user cannot withdraw... Insufficient contract funds") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::expectRevert(custom error 0xf4844814)
+    │   └─ ← [Return] 
+    ├─ [28604] UnsafeResolutionHub::getRefund()
+    │   └─ ← [Revert] InsufficientContractBalance()
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    ├─ [0] VM::assertGt(10000000000000000000 [1e19], 200000000000000000 [2e17], "Attack should steal more than entitled amount") [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::toString(0) [staticcall]
+    │   └─ ← [Return] "0"
+    ├─ [0] console::log("\nContract drained to %s threshold!", "0 ETH") [staticcall]
+    │   └─ ← [Stop] 
+    └─ ← [Stop] 
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 19.12ms (14.91ms CPU time)
+| src/FancyReentrancy.sol:FancyReentrancy contract |                 |       |        |       |         |
+|--------------------------------------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost                                  | Deployment Size |       |        |       |         |
+| 342304                                           | 1563            |       |        |       |         |
+| Function Name                                    | min             | avg   | median | max   | # calls |
+| attack                                           | 40079           | 66137 | 67000  | 67010 | 51      |
+| setPeer                                          | 43930           | 43930 | 43930  | 43930 | 2       |
+| withdraw                                         | 28250           | 28250 | 28250  | 28250 | 2       |
+
+
+| src/UnsafeResolutionHub.sol:UnsafeResolutionHub contract |                 |        |        |        |         |
+|----------------------------------------------------------|-----------------|--------|--------|--------|---------|
+| Deployment Cost                                          | Deployment Size |        |        |        |         |
+| 951472                                                   | 4166            |        |        |        |         |
+| Function Name                                            | min             | avg    | median | max    | # calls |
+| createDispute                                            | 165762          | 170046 | 165774 | 182874 | 4       |
+| deposit                                                  | 22727           | 22727  | 22727  | 22727  | 1       |
+| getRefund                                                | 28604           | 28604  | 28604  | 28604  | 1       |
+| resolveDispute                                           | 81342           | 81342  | 81342  | 81342  | 4       |
+| setMediator                                              | 44295           | 44295  | 44295  | 44295  | 1       |
+| userBalance                                              | 383             | 421    | 383    | 2383   | 103     |
+
+
+
+
+Ran 1 test suite in 22.41ms (19.12ms CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

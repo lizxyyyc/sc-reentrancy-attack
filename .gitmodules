@@ -1,0 +1,6 @@
+[submodule "include/secp256k1"]
+	path = include/secp256k1
+	url = https://github.com/bitcoin-core/secp256k1.git
+[submodule "include/ethash"]
+	path = include/ethash
+	url = https://github.com/chfast/ethash.git
